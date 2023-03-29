@@ -1,5 +1,5 @@
 <template>
-    <h2>Footer</h2>
+    <h2>Muva Architecture</h2>
 </template>
     
 <script>
@@ -11,7 +11,8 @@ export default {
     
 <style scoped>
 h2{
-    color: aquamarine;
+    text-align: center;
+    margin-top: 2rem;
 }
     
 </style>

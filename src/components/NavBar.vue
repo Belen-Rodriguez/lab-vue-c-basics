@@ -1,11 +1,13 @@
 <template>
-  <h2>Nav Component</h2>
-  <p>{{ navMsg }}</p>
-  <p>{{ sum }}</p>
-  <p>{{ allProjects() }}</p>
-  <p>{{ firstProject() }}</p>
-  <p v-if="firstProject() === 'project01' ">Yes it is the same!</p>
-  <p v-else>No, it is not the same!</p>
+  <div class="navBar">
+  <h4>{{ navMsg }}</h4>
+  <nav v-for="project in menu.projects" :key="project.value"
+  >{{ project }}</nav>
+  </div>
+  <h2>Itineration 3</h2>
+  <h5>{{ `See our exclusive projects of ${firstProject()}` }}</h5>
+  <p v-if="firstProject() === 'concrete' ">Yes! Our new concrete technology!</p>
+  <p v-else>Ond others materials too!</p>
 </template>
 
 <script>
@@ -13,11 +15,11 @@ export default {
   name: 'NavBar',
   data() {
     return {
-      navMsg: 'Hello Nav',
-      sum: 2 + 2,
+      navMsg: 'Projects:',
+
       menu: {
         home: 'About us',
-        projects: ['project01', 'project02', 'project03'],
+        projects: ['concrete', 'wood', 'metal'],
         contact: 'Get in contact!'
       }
     }
@@ -33,4 +35,30 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+*{
+  text-align: center;
+}
+
+.navBar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navBar h4{
+  width: 40%;
+} 
+.navBar nav{
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+h2{
+  margin-top:2rem;
+}
+
+
+
+</style>
